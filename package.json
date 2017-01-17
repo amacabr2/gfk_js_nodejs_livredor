@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/amacabr2/gfk_livre_or_node_js#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "ejs": "^2.5.5",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "express-session": "^1.14.2"
   }
 }
