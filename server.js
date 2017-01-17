@@ -22,7 +22,11 @@ app.use(require('./middleware/flash'));
 //routes
 
 app.get('/', (request, response) => {
-    response.render('pages/index');
+    let Message = require('./models/message');
+    Message.all(function (messages) {
+        console.log(messages);
+        response.render('pages/index', {messages: messages});
+    });
 });
 
 app.post('/', (request, response) => {

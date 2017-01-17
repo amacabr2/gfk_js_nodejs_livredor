@@ -1,14 +1,81 @@
 <% include header %>
 
-    <form class="ui form" action="/" method="post">
-        <div class="field">
-            <label for="message">Message</label>
-            <textarea name="message" id="message"></textarea>
+    <div class="row">
+
+        <div class="column">
+
+            <h1 class="ui header">Bienvenue</h1>
+            <div class="ui divider"></div>
+
+            <div class="ui segment">
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium assumenda beatae consequuntur dicta,
+                    doloremque eligendi est, hic impedit ipsa minus natus nobis placeat quae quaerat qui quo, quos ratione!
+                </p>
+
+                <p>
+                    Culpa, earum, obcaecati! Architecto eligendi labore nobis pariatur totam. Adipisci deserunt error itaque
+                    perspiciatis quia unde voluptates? Ipsam ipsum maxime minus quasi sapiente. Beatae, delectus ducimus nam
+                    perspiciatis quidem repellendus!
+                </p>
+
+                <p>
+                    Accusamus corporis expedita facere labore laboriosam obcaecati officiis omnis quis rem, ut! Aliquid assumenda
+                    aut dolorem exercitationem facere magni quisquam quod veniam? Commodi ducimus libero reiciendis? Impedit
+                    nostrum optio porro.
+                </p>
+
+                <p>
+                    Amet cum dolorem facere nisi omnis praesentium quis sunt ullam? Ab cumque eum harum ipsum iste laboriosam
+                    maiores minus nesciunt odio odit optio pariatur praesentium, quam, ratione reiciendis, veritatis
+                    voluptatum!
+                </p>
+
+                <p>
+                    Adipisci alias commodi culpa cupiditate dolor laudantium mollitia quae ratione repellat sunt ullam veritatis,
+                    vitae. Aliquam culpa cum dolor, nostrum soluta tenetur vitae. Aliquid illum quam quis tempore. Quam,
+                    suscipit!
+                </p>
+
+            </div>
+
         </div>
-        <button class="ui blue labeled submit icon button" type="submit">
-            <i class="icon edit"></i>
-            Envoyer
-        </button>
-    </form>
+
+    </div>
+
+
+    <div class="row">
+        <div class="column">
+            <h3 class="ui header">Messages</h3>
+            <div class="ui divider"></div>
+            <form class="ui form" action="/" method="post">
+                <div class="field">
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <button class="ui blue labeled submit icon button" type="submit">
+                    <i class="icon edit"></i>
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="ui comments">
+                <h3 class="ui dividing header">Commentaires</h3>
+                <% for (message of messages) { %>
+                    <div class="comment">
+                        <div class="content">
+                            <div class="test"><%= message.content %></div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+
 
 <% include footer %>
