@@ -67,9 +67,17 @@
                 <h3 class="ui dividing header">Commentaires</h3>
                 <% for (message of messages) { %>
                     <div class="comment">
-                        <div class="content">
-                            <div class="test"><%= message.content %></div>
-                        </div>
+                        <a class="ui image header" href="/message/<%= message.id %>">
+                            <img class="ui mini rounded image" src="https://randomuser.me/api/portraits/lego/6.jpg">
+                            <div class="content">
+                                <div class="metadata">
+                                    <div class="date">
+                                        <%= message.created_at.fromNow() %>
+                                    </div><br>
+                                    <div class="sub header"><%= message.content %></div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 <% } %>
             </div>
