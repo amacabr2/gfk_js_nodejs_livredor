@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/amacabr2/gfk_livre_or_node_js/issues"
   },
-  "homepage": "https://github.com/amacabr2/gfk_livre_or_node_js#readme"
+  "homepage": "https://github.com/amacabr2/gfk_livre_or_node_js#readme",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0"
+  }
 }
