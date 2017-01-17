@@ -38,6 +38,13 @@ class Message {
         });
     }
 
+    static find(id, cb) {
+        connexion.query('SELECT * FROM message WHERE id = ? LIMIT 1', [id], (err, rows) => {
+            if (err) throw err;
+            cb(new Message(rows[0]));
+        });
+    }
+
 }
 
 module.exports = Message;
