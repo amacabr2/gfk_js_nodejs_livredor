@@ -17,20 +17,17 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: false }
 }));
+app.use(require('./middleware/flash'));
 
 //routes
 
 app.get('/', (request, response) => {
-    if (request.session.error) {
-        response.locals.error = request.session.error;
-        request.session.error = undefined;
-    }
     response.render('pages/index');
 });
 
 app.post('/', (request, response) => {
     if (request.body.message === undefined || request.body.message === '') {
-        request.session.error = "Vous n'avez pas entré de message ";
+        request.flash('error', "Vous n'avez pas entré de message ");
         response.redirect('/');
     }
 });
